@@ -1,0 +1,18 @@
+{
+  "lines": [ 90, 99 ],
+  "statements": [ 90, 99 ],
+  "functions": [ 90, 99 ],
+  "branches": [ 90, 99 ],
+  "exclude": [
+    "**/*.d.ts"
+  ],
+  "extension": [ ".js", ".ts" ],
+  "cache": true,
+  "all": true,
+  "check-coverage": true,
+  "report-dir": "coverage",
+  "reporter": [ "lcov", "text" ],
+  "require": [ "source-map-support/register" ],
+  "sourceMap": false,
+  "instrument": false
+}
