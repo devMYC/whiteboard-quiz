@@ -1,3 +1,10 @@
+/**
+ * Return all subsets of the given set
+ *
+ * @examples
+ *  subsets([ 1, 2 ]) -> [ [], [1], [2], [1, 2] ]
+ *  subsets([ 1, 2, 3 ]) -> [ [], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3] ]
+ */
 export const subsets = (arr: number[]): number[][] => {
   const result: number[][] = [ [] ]
   let container: number[][] = []

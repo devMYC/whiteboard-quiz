@@ -5,6 +5,17 @@ export enum Directions {
   LEFT = 'LEFT',
 }
 
+/**
+ * Return a N*N sprial martrix
+ *
+ * @examples
+ *  spiralMatirx(2) -> [ [ 1, 2 ],
+ *                       [ 4, 3 ] ]
+ *
+ *  spiralMatrix(3) -> [ [ 1, 2, 3 ],
+ *                       [ 8, 9, 4 ],
+ *                       [ 7, 6, 5 ] ]
+ */
 export const spiralMatrix = (n: number): number[][] => {
 
   const matrix: number[][] = []

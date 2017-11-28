@@ -1,3 +1,14 @@
+/**
+ * Print N levels of *s in a pyramid shape
+ *
+ * @examples
+ *  pyramid(2) ->  *
+ *               * * *
+ *
+ *  pyramid(3) ->  *
+ *               * * *
+ *             * * * * *
+ */
 export const pyramid = (n: number): void => {
   if ( n <= 0 ) return // tslint:disable-line
   const lineWidth: number = n * 2 - 1

@@ -22,6 +22,7 @@
     "no-unused-vars": [ "warn", { "vars": "all", "args": "all", "argsIgnorePattern": "^_$" } ],
     "quote-props": [ "error", "as-needed", { "keywords": false, "numbers": true } ],
     "quotes": [ "warn", "single" ],
+    "radix": [ "error", "always" ],
     "semi": [ "warn", "never" ]
   }
 }
