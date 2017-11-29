@@ -7,8 +7,9 @@
  *  isPalindrome('hello') -> false
  */
 export const isPalindrome = (str: string): boolean => {
-  for ( let i = 0; i < str.length / 2; i++ ) {
-    if ( str[i] !== str[str.length - 1 - i] ) {
+  const purified = str.replace(/\W/, '')
+  for ( let i = 0; i < purified.length / 2; i++ ) {
+    if ( purified[i] !== purified[purified.length - 1 - i] ) {
       return false
     }
   }

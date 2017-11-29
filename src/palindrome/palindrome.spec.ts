@@ -13,5 +13,5 @@ test('`hello` is not a palindrome', () => {
 
 
 test('`taco cat` is a palindrome', () => {
-  expect( isPalindrome('taco cat') ).toBeFalsy()
+  expect( isPalindrome('taco cat') ).toBeTruthy()
 })
