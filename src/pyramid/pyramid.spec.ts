@@ -8,30 +8,34 @@ afterEach(() => { (console.log as sinon.SinonSpy).restore() })
 
 
 test('should print nothing', () => {
+  const spy = console.log as sinon.SinonSpy
   pyramid(0)
-  expect( (console.log as sinon.SinonSpy).notCalled ).toBeTruthy()
+  expect( spy.notCalled ).toBeTruthy()
 })
 
 
 test('should print 1 level', () => {
+  const spy = console.log as sinon.SinonSpy
   pyramid(1)
-  expect( (console.log as sinon.SinonSpy).calledOnce ).toBeTruthy()
-  expect( (console.log as sinon.SinonSpy).getCall(0).args[0] ).toBe('*')
+  expect( spy.calledOnce ).toBeTruthy()
+  expect( spy.getCall(0).args[0] ).toBe('*')
 })
 
 
 test('should print 2 level', () => {
+  const spy = console.log as sinon.SinonSpy
   pyramid(2)
-  expect( (console.log as sinon.SinonSpy).calledTwice ).toBeTruthy()
-  expect( (console.log as sinon.SinonSpy).getCall(0).args[0] ).toBe('  *  ')
-  expect( (console.log as sinon.SinonSpy).getCall(1).args[0] ).toBe('* * *')
+  expect( spy.calledTwice ).toBeTruthy()
+  expect( spy.getCall(0).args[0] ).toBe('  *  ')
+  expect( spy.getCall(1).args[0] ).toBe('* * *')
 })
 
 
 test('should print 3 level', () => {
+  const spy = console.log as sinon.SinonSpy
   pyramid(3)
-  expect( (console.log as sinon.SinonSpy).calledThrice ).toBeTruthy()
-  expect( (console.log as sinon.SinonSpy).getCall(0).args[0] ).toBe('    *    ')
-  expect( (console.log as sinon.SinonSpy).getCall(1).args[0] ).toBe('  * * *  ')
-  expect( (console.log as sinon.SinonSpy).getCall(2).args[0] ).toBe('* * * * *')
+  expect( spy.calledThrice ).toBeTruthy()
+  expect( spy.getCall(0).args[0] ).toBe('    *    ')
+  expect( spy.getCall(1).args[0] ).toBe('  * * *  ')
+  expect( spy.getCall(2).args[0] ).toBe('* * * * *')
 })
