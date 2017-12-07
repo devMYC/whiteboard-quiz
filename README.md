@@ -1,5 +1,7 @@
 # About this
 
+![CircleCI](https://img.shields.io/circleci/project/github/devMYC/whiteboard-quiz.svg?style=flat-square)
+
 Just a collection of whiteboard questions frequently asked in coding interviews. Have fun and challenge yourself before peeking at the solutions, but don't push yourself too hard.
 
 # Usage
