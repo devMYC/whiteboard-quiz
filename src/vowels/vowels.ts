@@ -7,9 +7,6 @@
  *  vowels('random') -> 2
  */
 export const vowels = (str: string): number => {
-  let count: number = 0
-  for ( const char of str ) {
-    /[aeiou]/i.test(char) && count++
-  }
-  return count
+  const matches: string[] | null = str.match(/[aeiou]/gi)
+  return matches ? matches.length : 0
 }
