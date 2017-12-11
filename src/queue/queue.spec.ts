@@ -19,11 +19,11 @@ test('should add new entry to the queue', () => {
 
 
 test('should remove entry from head of queue and return the value', () => {
-  expect.assertions(1)
+  expect.assertions(2)
   const q = new Queue()
   q.enqueue(100)
   q.enqueue(200)
   q.enqueue(300)
-  q.dequeue()
+  expect( q.dequeue() ).toBe(100)
   expect( q.list ).toEqual([ 200, 300 ])
 })
