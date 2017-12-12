@@ -7,7 +7,7 @@
  *  s.push('B')
  *  s.size -> 2
  *  s.pop() -> 'B'
- *  s.size -> 3
+ *  s.size -> 1
  */
 export default class Stack<T> {
 
