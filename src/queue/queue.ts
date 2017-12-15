@@ -16,17 +16,17 @@ export default class Queue<T> {
     this.entries = []
   }
 
-  public get list() {
+  public get list(): T[] {
     return this.entries
   }
 
-  public dequeue() {
+  public dequeue(): T {
     const removed: T = this.entries[0]
     this.entries = this.entries.slice(1)
     return removed
   }
 
-  public enqueue(entry: T) {
+  public enqueue(entry: T): void {
     this.entries = this.entries.concat(entry)
   }
 

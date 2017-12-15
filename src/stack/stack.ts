@@ -17,18 +17,18 @@ export default class Stack<T> {
     this.entries = []
   }
 
-  public get size() {
+  public get size(): number {
     return this.entries.length
   }
 
-  public pop() {
+  public pop(): T {
     const top: number = this.entries.length - 1
     const popped: T = this.entries[top]
     this.entries = this.entries.slice(0, top)
     return popped
   }
 
-  public push(entry: T) {
+  public push(entry: T): void {
     this.entries = this.entries.concat(entry)
   }
 
