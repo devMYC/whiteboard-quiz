@@ -1,7 +1,7 @@
 /**
  * Implement a queue structure
  *
- * @examples
+ * @example
  *  const q = new Queue()
  *  q.enqueue(3)
  *  q.list -> [ 3 ]

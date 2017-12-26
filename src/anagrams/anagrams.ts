@@ -1,7 +1,7 @@
 /**
  * Check if the two given strings are anagrams. (punctuations are ignored)
  *
- * @examples
+ * @example
  *  anagrams('rail safety', 'fairy tales') -> true
  *  anagrams('slient', 'listen') -> true
  *  anagrams('puppy', 'kitty') -> false

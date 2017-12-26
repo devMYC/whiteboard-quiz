@@ -2,7 +2,7 @@
  * Print a stairs shape with N levels using `#` character
  * Make sure the stairs have spaces on the right hand side.
  *
- * @examples
+ * @example
  *  stairs(1) -> '#'
  *
  *  stairs(2) -> '# '

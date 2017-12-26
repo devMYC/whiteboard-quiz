@@ -1,7 +1,7 @@
 /**
  * Reverse the given string
  *
- * @examples
+ * @example
  *  reverseStr('') -> ''
  *  reverseStr('abcd') -> 'dcba'
  */

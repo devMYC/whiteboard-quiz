@@ -1,7 +1,7 @@
 /**
  * Return an integer that is reverse ordering the numbers of the given integer
  *
- * @examples
+ * @example
  *  reverseInt(10) -> 1
  *  reverseInt(-321) -> -123
  */

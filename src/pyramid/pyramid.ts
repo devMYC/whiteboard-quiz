@@ -1,7 +1,7 @@
 /**
  * Print N levels of *s in a pyramid shape
  *
- * @examples
+ * @example
  *  pyramid(2) ->  *
  *               * * *
  *

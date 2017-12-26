@@ -2,7 +2,7 @@
  * Returns the number of vowels in the given string.
  * Vowels are the character 'a', 'e', 'i', 'o', 'u'.
  *
- * @examples
+ * @example
  *  vowels('Hello world') -> 3
  *  vowels('random') -> 2
  */

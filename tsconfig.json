@@ -3,12 +3,19 @@
     "target": "es5",
     "module": "commonjs",
     "lib": [
-        "esnext",
-        "es2015.promise"
+      "dom",
+      "es5",
+      "scripthost",
+      "esnext",
+      "es2015.collection",
+      "es2015.generator",
+      "es2015.iterable",
+      "es2015.promise"
     ],
     "allowJs": true,
     "checkJs": true,
     "charset": "utf8",
+    "downlevelIteration": true,
     "jsx": "react",
     "declaration": false,
     "sourceMap": true,
@@ -17,7 +24,6 @@
     "noEmit": false,
     "noEmitOnError": true,
     "importHelpers": true,
-    "downlevelIteration": true,
     "isolatedModules": false,
     "strict": true,
     "preserveConstEnums": true,
@@ -33,7 +39,7 @@
     "baseUrl": "./",
     "paths": {},
     "rootDirs": [
-        "src/"
+      "src/"
     ],
     "typeRoots": [
       "./node_modules/@types"

@@ -3,7 +3,7 @@
  * The fibonacci series is an series of numbers where
  * each number is the sum of the preceeding two. i.e: [ 0, 1, 1, 2, 3, 5, 8 ... ]
  *
- * @examples
+ * @example
  *  fib(6) -> 5
  */
 export const fib = (n: number): number => {

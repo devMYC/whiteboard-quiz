@@ -2,7 +2,7 @@
  * Divide the given array into many chunks where
  * each chunk is of length size (at most)
  *
- * @examples
+ * @example
  *  chunk([ 1, 2, 3, 4 ], 2) -> [ [ 1, 2 ], [ 3, 4 ] ]
  *  chunk([ 1, 2, 3, 4 ], 3) -> [ [ 1, 2, 3 ], [ 4 ] ]
  */

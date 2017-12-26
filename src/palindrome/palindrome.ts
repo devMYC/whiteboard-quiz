@@ -2,7 +2,7 @@
  * Check if the given string is a palindrome.
  * Palindromes are strings that reads the same backward as forward.
  *
- * @examples
+ * @example
  *  isPalindrome('taco cat') -> true
  *  isPalindrome('hello') -> false
  */

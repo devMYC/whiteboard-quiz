@@ -4,7 +4,7 @@
  * of five print "buzz". For numbers that are multiples of both
  * three and five print "fizzbuzz".
  *
- * @examples
+ * @example
  *  fizzBuzz(15)
  *  output:
  *    1

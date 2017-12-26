@@ -5,7 +5,7 @@ interface ICharMap<T> {
 /**
  * Return most frequently occurred character from the given string
  *
- * @examples
+ * @example
  *  mostFreqChar('') -> ''
  *  mostFreqChar('abcd') -> 'a'
  *  mostFreqChar('abcdefacbbb') -> 'b'

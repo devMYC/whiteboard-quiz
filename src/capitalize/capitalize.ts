@@ -1,7 +1,7 @@
 /**
  * Return a string that capitalized each word of the given string
  *
- * @examples
+ * @example
  *  capitalize('hi, there!') -> 'Hi, There!'
  */
 export const capitalize = (str: string): string => (

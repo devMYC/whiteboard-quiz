@@ -8,7 +8,7 @@ export enum Directions {
 /**
  * Return a N*N sprial martrix
  *
- * @examples
+ * @example
  *  spiralMatirx(2) -> [ [ 1, 2 ],
  *                       [ 4, 3 ] ]
  *
