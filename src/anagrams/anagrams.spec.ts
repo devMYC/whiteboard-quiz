@@ -1,4 +1,3 @@
-import 'jest'
 import { areAnagrams } from './anagrams'
 
 

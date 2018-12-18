@@ -1,4 +1,3 @@
-import 'jest'
 import { reverseInt } from './intReversal'
 
 

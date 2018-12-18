@@ -1,4 +1,3 @@
-import 'jest'
 import { capitalize } from './capitalize'
 
 

@@ -1,4 +1,3 @@
-import 'jest'
 import * as sinon from 'sinon'
 import { fizzBuzz } from './fizzBuzz'
 

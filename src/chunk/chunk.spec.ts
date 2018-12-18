@@ -1,4 +1,3 @@
-import 'jest'
 import { chunk } from './chunk'
 
 const arr = Object.freeze([ 1, 2, 3, 4, 5, 6 ])
