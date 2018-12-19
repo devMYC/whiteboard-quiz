@@ -8,8 +8,8 @@
   "scripts": {
     "build": "rm -rf dist && tsc",
     "clean": "rm -rf .nyc_output & rm -rf coverage & rm -rf dist",
-    "test": "nyc jest",
-    "test:watch": "nyc jest --watch"
+    "test": "nyc jest --runInBand",
+    "test:watch": "nyc jest --runInBand --watch"
   },
   "jest": {
     "rootDir": "./",
