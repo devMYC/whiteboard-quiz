@@ -91,13 +91,11 @@ export default class Graph {
       return node
     }
 
-    const q = new Queue()
     const visited = new Set()
-    q.enqueue(node)
     visited.add(node.key)
 
     let found: INode | undefined
-    const _fn = (n: INode): void => {
+    const _walkFrom = (n: INode): void => {
       let neighbor: INode
       for ( neighbor of n.neighbors ) {
         if ( found ) { return }
@@ -109,18 +107,13 @@ export default class Graph {
           return
         }
         visited.add(neighbor.key)
-        q.enqueue(neighbor)
-        _fn(neighbor)
+        _walkFrom(neighbor)
       }
     }
 
-    let currNode: INode
-    while ( !q.isEmpty ) {
-      currNode = q.dequeue() as INode
-      _fn(currNode)
-      if ( found ) {
-        return found
-      }
+    _walkFrom(node)
+    if ( found ) {
+      return found
     }
     return
   }
