@@ -24,36 +24,38 @@ export function heapSort<T>(fn: CmpFunc<T>|null|undefined, arr?: T[]): any {
     return heapSort.bind(null, fn)
   }
 
-  let i = Math.floor((arr as T[]).length / 2 - 1)
+  arr = arr as T[]
+  let i = Math.floor(arr.length / 2 - 1)
   let c: number
   let r: number
 
+
   // heapify
   for ( ; i >= 0; i-- ) {
-    for ( r = i; r * 2 + 1 < (arr as T[]).length; r = c ) {
+    for ( r = i; r * 2 + 1 < arr.length; r = c ) {
       c = r * 2 + 1
-      c < (arr as T[]).length - 1 && fn((arr as T[])[c], (arr as T[])[c + 1]) < Compare.EQUAL && c++
-      if ( fn((arr as T[])[r], (arr as T[])[c]) >= Compare.EQUAL ) {
+      c < arr.length - 1 && fn(arr[c], arr[c + 1]) < Compare.EQUAL && c++
+      if ( fn(arr[r], arr[c]) >= Compare.EQUAL ) {
         break
       }
-      swap((arr as T[]), r, c)
+      swap(arr, r, c)
     }
   }
 
   // sort
-  for ( i = (arr as T[]).length - 1; i > 0; i-- ) {
-    swap((arr as T[]), 0, i)
+  for ( i = arr.length - 1; i > 0; i-- ) {
+    swap(arr, 0, i)
     for ( r = 0; r * 2 + 1 < i; r = c ) {
       c = r * 2 + 1
-      c < i - 1 && fn((arr as T[])[c], (arr as T[])[c + 1]) === Compare.LESS && c++
-      if ( fn((arr as T[])[r], (arr as T[])[c]) >= Compare.EQUAL ) {
+      c < i - 1 && fn(arr[c], arr[c + 1]) === Compare.LESS && c++
+      if ( fn(arr[r], arr[c]) >= Compare.EQUAL ) {
         break
       }
-      swap((arr as T[]), r, c)
+      swap(arr, r, c)
     }
   }
 
-  return (arr as T[])
+  return arr
 }
 
 function cmp<T>(a: T, b: T): Compare {
