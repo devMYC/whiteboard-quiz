@@ -31,6 +31,8 @@ jobs:
     working_directory: ~/repo
     docker:
       - image: circleci/node:6.16.0
+    environment:
+      JEST_JUNIT_OUTPUT: .reports/summary.xml
     steps:
       - restore_cache:
           key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
@@ -43,7 +45,7 @@ jobs:
             - .nyc_output
             - coverage
       - store_test_results:
-          path: coverage/lcov-report
+          path: .reports
 
   coverage:
     working_directory: ~/repo

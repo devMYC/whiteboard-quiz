@@ -6,4 +6,5 @@
 build
 coverage
 dist
+junit.xml
 node_modules
