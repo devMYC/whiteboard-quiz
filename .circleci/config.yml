@@ -39,7 +39,8 @@ jobs:
       - run: yarn clean && yarn test
       - save_cache:
           key: coverage-cache-{{ .Environment.CIRCLE_SHA1 }}
-          path: coverage
+          paths:
+            - coverage
       - store_test_results:
           path: coverage/lcov-report
 
