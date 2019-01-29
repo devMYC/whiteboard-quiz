@@ -32,7 +32,7 @@ jobs:
     docker:
       - image: circleci/node:6.16.0
     environment:
-      JEST_JUNIT_OUTPUT: .reports/summary.xml
+      JEST_JUNIT_OUTPUT: .reports/jest/summary.xml
     steps:
       - restore_cache:
           key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
