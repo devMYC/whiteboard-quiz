@@ -8,6 +8,7 @@
   "scripts": {
     "build": "rm -rf dist && tsc",
     "clean": "rm -rf .nyc_output & rm -rf coverage & rm -rf dist",
+    "codecov": "nyc report --reporter=json && codecov -f coverage/coverage-final.json",
     "test": "nyc jest --runInBand",
     "test:watch": "nyc jest --runInBand --watch"
   },

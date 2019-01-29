@@ -1,24 +1,73 @@
 version: 2
+
 jobs:
-  build:
-    docker:
-      - image: circleci/node:6.11.4
-
+  checkout_code:
     working_directory: ~/repo
-
+    docker:
+      - image: circleci/node:6.16.0
     steps:
       - checkout
-
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies-
-
-      - run: yarn install
-
       - save_cache:
+          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - ~/repo
+
+  install_deps:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:6.16.0
+    steps:
+      - restore_cache:
+          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+      - restore_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+      - run: yarn install
+      - save_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
 
+  run_test:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:6.16.0
+    steps:
+      - restore_cache:
+          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+      - restore_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
       - run: yarn clean && yarn test
+      - save_cache:
+          key: coverage-cache-{{ .Environment.CIRCLE_SHA1 }}
+          path: coverage
+      - store_test_results:
+          path: coverage/lcov-report
+
+  coverage:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:6.16.0
+    steps:
+      - restore_cache:
+          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+      - restore_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          key: coverage-cache-{{ .Environment.CIRCLE_SHA1 }}
+      - run: yarn codecov
+
+
+workflows:
+  version: 2
+  build-and-test:
+    jobs:
+      - checkout_code
+      - install_deps:
+          requires:
+            - checkout_code
+      - run_test:
+          requires:
+            - install_deps
+      - coverage:
+          requires:
+            - run_test
